@@ -7,7 +7,7 @@ import {ChartKitDataProvider} from '../components/ChartKitBase/types';
 
 import {MenuItemConfig} from './Menu';
 import {
-    getEditMenuItem,
+    //getEditMenuItem,
     getExportMenuItem,
     getFullscreenMenuItem,
     getInspectorMenuItem,
@@ -25,7 +25,7 @@ import {
 export const getWidgetChartMenu = ({
     chartsDataProvider,
     customOptions,
-    canEdit,
+    //canEdit,
     extraOptions,
 }: {
     chartsDataProvider: ChartKitDataProvider;
@@ -44,13 +44,14 @@ export const getWidgetChartMenu = ({
             customConfig: customOptions[MenuItemsIds.NEW_WINDOW],
             extraOptions,
         }),
-        getInspectorMenuItem(),
+        getInspectorMenuItem()
+        /* Removed the chart-editing
         canEdit
             ? getEditMenuItem({
                   chartsDataProvider,
                   customConfig: customOptions[MenuItemsIds.EDIT],
               })
-            : null,
+            : null,*/
     ];
 };
 
@@ -111,11 +112,11 @@ export const getDefaultChartMenu = ({
             customConfig: customOptions[MenuItemsIds.NEW_WINDOW],
             extraOptions,
         }),
-        getInspectorMenuItem(),
+        getInspectorMenuItem(),/*
         getEditMenuItem({
             chartsDataProvider,
             customConfig: customOptions[MenuItemsIds.EDIT],
-        }),
+        }),*/
         getOpenAsTableMenuItem({
             chartsDataProvider,
             customConfig: customOptions[MenuItemsIds.OPEN_AS_TABLE],
